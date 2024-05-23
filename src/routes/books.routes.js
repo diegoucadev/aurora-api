@@ -1,9 +1,11 @@
-import { Router } from "express"
+import { Router } from "express";
+import * as bookController from '../controllers/books.controller.js';
 
-const router = Router()
 
-router.get('/books', (req, res) => {
-    res.send('Hello world!')
-})
+const router = Router();
 
-export default router
+
+router.get('/books', bookController.getAllBooks);
+
+
+export default router;
